@@ -1,15 +1,39 @@
 const STYLE_ID = 'evitenic-editor-css';
 
-export function injectEditorCss( css ) {
-	let style = document.getElementById( STYLE_ID );
+let styleElement = null;
 
-	if ( ! style ) {
-		style = document.createElement( 'style' );
+function getEditorDocument() {
+	const iframe = document.querySelector( 'iframe[name="editor-canvas"]' );
 
-		style.id = STYLE_ID;
-
-		document.head.appendChild( style );
+	if ( ! iframe ) {
+		return null;
 	}
 
-	style.innerHTML = css;
+	return iframe.contentDocument || iframe.contentWindow?.document;
+}
+
+export function injectEditorCss( css ) {
+	const iframeDocument = getEditorDocument();
+
+	if ( ! iframeDocument || ! iframeDocument.head ) {
+		window.requestAnimationFrame( () => {
+			injectEditorCss( css );
+		} );
+
+		return;
+	}
+
+	if ( ! styleElement || ! iframeDocument.contains( styleElement ) ) {
+		styleElement = iframeDocument.getElementById( STYLE_ID );
+
+		if ( ! styleElement ) {
+			styleElement = iframeDocument.createElement( 'style' );
+
+			styleElement.id = STYLE_ID;
+		}
+	}
+
+	styleElement.textContent = css;
+
+	iframeDocument.head.appendChild( styleElement );
 }
