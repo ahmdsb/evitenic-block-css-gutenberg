@@ -64,9 +64,17 @@ import './style.scss';
 		}
 
 		if ( button.classList.contains( 'evitenic-remove-row' ) ) {
-			row.remove();
+			/* eslint-disable no-alert */
+			const userResponse = window.confirm(
+				'Are you sure you want to delete this breakpoint?'
+			);
+			/* eslint-enable no-alert */
 
-			renumber();
+			if ( userResponse ) {
+				row.remove();
+
+				renumber();
+			}
 
 			return;
 		}
