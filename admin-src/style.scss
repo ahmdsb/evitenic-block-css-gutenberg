@@ -1,0 +1,124 @@
+.evitenic-admin-wrap {
+
+	.wrap {
+
+		> h1 {
+			margin-bottom: 8px;
+			font-size: 28px;
+			line-height: 1.2;
+			font-weight: 700;
+		}
+
+		> p {
+			margin: 0 0 20px;
+			color: #646970;
+			font-size: 14px;
+		}
+	}
+
+	form {
+
+		.submit {
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.evitenic-breakpoints-list {
+		display: grid;
+		gap: 16px;
+		margin-top: 20px;
+	}
+
+	.evitenic-breakpoint-row {
+		margin: 0;
+	}
+
+	.evitenic-breakpoint-card {
+		background: #fff;
+		border: 1px solid #dcdcde;
+		padding: 20px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+	}
+
+	.evitenic-breakpoint-fields {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+
+		p {
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+		}
+
+		label {
+			font-size: 13px;
+			font-weight: 600;
+			color: #1d2327;
+		}
+
+		input,
+		select {
+			width: 100%;
+			min-height: 42px;
+			border: 1px solid #dcdcde;
+			padding: 0 12px;
+			background: #fff;
+			box-shadow: none;
+		}
+	}
+
+	.evitenic-breakpoint-actions {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 16px;
+		flex-wrap: wrap;
+	}
+
+	#evitenic-add-breakpoint.button-primary {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.evitenic-footer-actions {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		margin-top: 20px;
+	}
+
+	.evitenic-form-actions {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 32px;
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+@media (max-width: 782px) {
+
+	.evitenic-admin-wrap {
+
+		.evitenic-breakpoint-fields {
+			grid-template-columns: 1fr;
+		}
+
+		.evitenic-breakpoint-actions {
+			justify-content: flex-start;
+		}
+
+		.evitenic-footer-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+}

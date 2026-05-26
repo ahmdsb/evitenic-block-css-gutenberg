@@ -1,0 +1,81 @@
+.evitenic-css-toolbar {
+	display: flex;
+	gap: 8px;
+	align-items: flex-end;
+
+	.components-base-control {
+		flex: 1;
+		margin-bottom: 0;
+	}
+}
+
+.evitenic-css-fullscreen-button {
+	width: 38px;
+	min-width: 38px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	justify-content: center;
+}
+
+.evitenic-css-editor-wrap {
+	margin-top: 12px;
+}
+
+.evitenic-code-editor {
+
+	.cm-editor {
+		min-height: 260px;
+		border: 1px solid #dcdcde;
+		overflow: hidden;
+	}
+
+	.cm-scroller {
+		font-family: monospace;
+		line-height: 1.5;
+	}
+}
+
+.evitenic-css-actions {
+	margin-top: 12px;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.evitenic-css-modal {
+
+	.components-modal__content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.components-modal__header {
+		flex: 0 0 auto;
+	}
+
+	.evitenic-code-editor {
+		max-height: 400px;
+		overflow-y: auto;
+	}
+}
+
+.evitenic-css-modal__body {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 24px;
+	overflow: auto;
+}
+
+.evitenic-css-modal__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	flex-wrap: wrap;
+}

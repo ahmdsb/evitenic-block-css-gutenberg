@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+
+# Build
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Composer
+vendor/
+
+# WordPress
+*.zip
+
+# Cache
+.cache/
+dist/
+
+# Sourcemaps
+*.map
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Windows
+Desktop.ini
+
+# PHPUnit
+phpunit.xml
+.phpunit.result.cache
+
+# Coverage
+coverage/
+
+# Temp
+tmp/
+temp/
+
+# Generated assets
+*.min.js
+*.min.css
+
+# Lockfiles (optional)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

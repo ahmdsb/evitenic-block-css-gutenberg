@@ -1,0 +1,46 @@
+{
+	"name": "evitenic-block-css-gutenberg",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Responsive CSS editor for Gutenberg blocks with custom breakpoints.",
+	"scripts": {
+		"build": "wp-scripts build",
+		"build:admin": "wp-scripts build --source-path=admin-src --output-path=admin-build",
+		"build:all": "concurrently \"npm:build\" \"npm:build:admin\"",
+		"start": "wp-scripts start",
+		"start:admin": "wp-scripts start --source-path=admin-src --output-path=admin-build",
+		"start:all": "concurrently \"npm:start\" \"npm:start:admin\"",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style",
+		"check": "concurrently \"npm:lint:js\" \"npm:lint:style\"",
+		"zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@wordpress/block-editor": "^15.19.0",
+		"@wordpress/blocks": "^15.19.0",
+		"@wordpress/components": "^33.1.0",
+		"@wordpress/compose": "^7.46.0",
+		"@wordpress/element": "^6.46.0",
+		"@wordpress/hooks": "^4.46.0",
+		"@wordpress/scripts": "^32.2.0",
+		"concurrently": "^9.2.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"dependencies": {
+		"@codemirror/lang-css": "^6.3.1",
+		"@uiw/react-codemirror": "^4.25.10",
+		"@wordpress/data": "^10.46.0",
+		"lodash": "^4.18.1"
+	},
+	"files": [
+		"build",
+		"admin-build",
+		"includes",
+		"evitenic-block-css-gutenberg.php",
+		"readme.txt",
+		"README.md",
+		"package.json"
+	]
+}
