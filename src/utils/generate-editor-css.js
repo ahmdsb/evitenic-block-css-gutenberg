@@ -10,7 +10,7 @@ export function generateEditorCss( blocks, breakpoints ) {
 			const cssMap = attrs?.evitenicBlockCSS;
 
 			if ( cssId && cssMap ) {
-				const wrapperClass = `.evitenic-css-${ cssId }`;
+				const wrapperClass = `.editor-styles-wrapper .evitenic-css-${ cssId }.evitenic-css-${ cssId }`;
 
 				Object.entries( cssMap ).forEach( ( [ breakpointId, css ] ) => {
 					if ( ! css?.trim() ) {
@@ -34,10 +34,10 @@ export function generateEditorCss( blocks, breakpoints ) {
 					}
 
 					styles.push( `
-@media (${ breakpoint.type }-width: ${ breakpoint.value }px) {
-${ compiled }
-}
-` );
+            @media (${ breakpoint.type }-width: ${ breakpoint.value }px) {
+              ${ compiled }
+            }
+          ` );
 				} );
 			}
 
